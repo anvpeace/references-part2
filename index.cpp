@@ -2,49 +2,48 @@
 
 using namespace std;
 
-void checkIfTheSame(int &, int&);
+void checkIfTheSame(int &, int &);
 // bool isEqual;
 
 
 int main(){
-    int input1;
-    int input2;
+    // int input1;
+    // int input2;
 
-    cout << "Enter number 1: " << endl;
-    cin >> input1;
-
-
-    cout << "Enter number 2: " << endl;
-    cin >> input2;
-
-    int a = input1;
-    int b = input2;
+    int a = 10;
+    int b = 20;
     int c = a;
     int &d = a;
 
-    int &ref_ab = (a , b);
-    int &ref_ac = (a, c);
+
+    checkIfTheSame(a, b);
+    checkIfTheSame(a, c);
+    checkIfTheSame(a, d);
 
 
 
-    checkIfTheSame(ref_ab , ref_ac);
-    // checkIfTheSame(a , c);
-    // checkIfTheSame(a , d);
+    // checkIfTheSame(ref_ab , ref_ac);
+    // // checkIfTheSame(a , c);
+    // // checkIfTheSame(a , d);
 
 }
 
-void checkIfTheSame( int &ref_ab, int &ref_ac){
-    // cout << ref_x << " " << &ref_x << endl;
+void checkIfTheSame( int &x, int &y){
 
-    if(( ref_ab == ref_ac) && (&ref_ac == &ref_ab)){
-
-        cout << "Value " << ref_ab << "; address: " <<&ref_ab << endl;
-        cout << "Value " << ref_ac << "; address: " << &ref_ac << endl;
-        // cout << "Value " << c << "; address: " << &c << endl;
-        // cout << "Value " << d << "; address: " << &d << endl;
-
-
+    if((x == y)){
+        cout << endl;
+        cout << x << endl;
+        cout << y << endl;
+    }else if(((x == y) && (&x == &y)) || ((x == y) && (&x != &y)) || ((x != y) && (&x != &y))){
+        cout << endl;
+        cout << x << " address: " << &x << endl;
+        cout << y << " address: " << &y << endl;
     }
+
+
+
+
+
 
 }
 
